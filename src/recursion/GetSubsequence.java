@@ -1,8 +1,6 @@
-package recursion.strings;
+package recursion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class GetSubsequence {
     public static ArrayList<String> gss(String str){

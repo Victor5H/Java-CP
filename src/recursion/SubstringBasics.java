@@ -1,4 +1,4 @@
-package recursion.strings;
+package recursion;
 
 public class SubstringBasics {
     public static void main(String[] args) {
