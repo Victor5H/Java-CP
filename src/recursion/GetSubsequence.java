@@ -20,6 +20,7 @@ public class GetSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.println(gss("abc"));
+        System.out.println(gss("qwertyuiopasdfghjklzxcvbn"));
+        //[, a, b, ab, c, ac, bc, abc]
     }
 }
