@@ -8,5 +8,6 @@ public class ReverseString {
         while(first<last){
             String temp = sb.charAt(first)+"";
         }
+        return "";
     }
 }
