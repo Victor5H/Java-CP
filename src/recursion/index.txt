@@ -23,3 +23,4 @@
 023 - PrintEncodings.java
 024 - FloodFill.java
 025 - SumSubsets.java
+026 - NQueens.java
