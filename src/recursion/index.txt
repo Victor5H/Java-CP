@@ -24,3 +24,4 @@
 024 - FloodFill.java
 025 - SumSubsets.java
 026 - NQueens.java
+027 - KnightsTour.java
