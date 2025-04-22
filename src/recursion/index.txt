@@ -21,3 +21,5 @@
 021 - PrintMazePathWithJumps.java
 022 - PrintPermutation.java
 023 - PrintEncodings.java
+024 - FloodFill.java
+025 - SumSubsets.java
