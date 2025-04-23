@@ -1,7 +1,5 @@
 package arrays;
 
-import java.util.Arrays;
-
 public class SumOfArrays {
     public static void sum(int [] nums1,int [] nums2){
         int max = Math.max(nums1.length, nums2.length);
