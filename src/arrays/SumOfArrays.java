@@ -3,31 +3,39 @@ package arrays;
 import java.util.Arrays;
 
 public class SumOfArrays {
-    public static int [] sum(int [] nums1,int [] nums2){
-        int min = Math.min(nums1.length, nums2.length);
+    public static void sum(int [] nums1,int [] nums2){
         int max = Math.max(nums1.length, nums2.length);
         int [] ret = new int[max];
-        int i=0;
-        while (i<min){
-            ret[i] = nums1[i]+nums2[i];
-            i++;
+        int pointRet = max-1,pointNum1= nums1.length-1,pointNum2=nums2.length-1;
+        int carry=0;
+        while (pointNum2>=0 && pointNum1>=0){
+            int sum = nums1[pointNum1--]+nums2[pointNum2--]+carry;
+            ret[pointRet--] =sum%10;
+            sum=sum/10;
+            carry=sum;
         }
-        if(i== nums1.length){
-            while (i<max){
-                ret[i] = nums2[i];
-                i++;
-            }
+        while (pointNum1>=0){
+            int sum = nums1[pointNum1--]+carry;
+            ret[pointRet--] = sum%10;
+            sum=sum/10;
+            carry=sum;
         }
-        else{
-            while (i<max){
-                ret[i] = nums1[i];
-                i++;
-            }
+        while (pointNum2>=0){
+            int sum = nums2[pointNum2--]+carry;
+            ret[pointRet--] = sum%10;
+            sum=sum/10;
+            carry=sum;
         }
-        return ret;
+        if(carry!=0){
+            System.out.print(carry);
+        }
+        for (int i = 0; i < ret.length; i++) {
+            System.out.print(ret[i]);
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sum(new int[]{1,2,3,4,5,6,7,8},new int[]{1,2,3,4,5})));
+       sum(new int[]{1,2,3,4,5,6,7,8},new int[]{1,2,3,4,5});
     }
 }
