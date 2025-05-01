@@ -74,3 +74,8 @@
 074 - LongestConsecutiveSubsequence.java  	 -- src\daily\twentyfourthApril
 075 - LongestSubstringWithoutRepeatingCharacters.java 	 -- src\daily\twentyfifthApril
 076 - DuplicateBrackets.java              	 -- src\stack      
+077 - BalancedBrackets.java               	 -- src\stack      
+078 - NextGreaterElementToRight.java      	 -- src\stack      
+079 - StockSpan.java                      	 -- src\stack      
+080 - LargestAreaHistogram.java           	 -- src\stack      
+081 - SlidingWindowMaximum.java           	 -- src\slidingWindow
