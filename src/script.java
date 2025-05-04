@@ -5,10 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class script {
 
@@ -36,10 +34,14 @@ public class script {
 
             // Write to index.txt
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(folderPath+indexFile))) {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy - HH:mm:ss - E");
                 int counter = 1;
                 for (FileInfo fileInfo : fileInfos) {
                     if(Objects.equals(fileInfo.name, "script.java")){continue;}
-                    String line = String.format("%03d - %-35s \t -- %-15s", counter++, fileInfo.name, fileInfo.path);
+                    Date date = new Date(fileInfo.creationTime);
+
+                   // System.out.println(sdf.format(date));
+                    String line = String.format("%03d - %-35s \t -- %-15s %-10s", counter++, fileInfo.name, fileInfo.path,sdf.format(date));
                     writer.write(line);
                     writer.newLine();
                 }

@@ -1,81 +1,85 @@
-001 - Main.java                           	 -- src            
-002 - Linear_search.java                  	 -- src\searches   
-003 - Heap.java                           	 -- src            
-004 - MergeSortedArray.java               	 -- src\leetcode\interview150
-005 - RemoveElement.java                  	 -- src\leetcode\interview150
-006 - RemoveDuplicate.java                	 -- src\leetcode\interview150
-007 - MajorityElement.java                	 -- src\leetcode\interview150
-008 - BinarySearch.java                   	 -- src\searches   
-009 - BubbleSort.java                     	 -- src\sorts      
-010 - SelectionSort.java                  	 -- src\sorts      
-011 - Sort.java                           	 -- src\sorts      
-012 - InsertionSort.java                  	 -- src\sorts      
-013 - QuickSort.java                      	 -- src\sorts      
-014 - LeftTriangle.java                   	 -- src\patterns   
-015 - RightTriangle.java                  	 -- src\patterns   
-016 - Pyramid.java                        	 -- src\patterns   
-017 - UpsideDownTriangle.java             	 -- src\patterns   
-018 - UpsideDownTriangle1.java            	 -- src\patterns   
-019 - UpsideDownPyramid.java              	 -- src\patterns   
-020 - Diamond.java                        	 -- src\patterns   
-021 - LeftDiagonal.java                   	 -- src\patterns   
-022 - RightDiagonal.java                  	 -- src\patterns   
-023 - Diagonals.java                      	 -- src\patterns   
-024 - NumTriangle.java                    	 -- src\patterns   
-025 - Table.java                          	 -- src\patterns   
-026 - Basic.java                          	 -- src\recursion  
-027 - Factorial.java                      	 -- src\recursion  
-028 - Power.java                          	 -- src\recursion  
-029 - PZZ.java                            	 -- src\recursion  
-030 - TowerOfHanoi.java                   	 -- src\recursion  
-031 - PrintArray.java                     	 -- src\recursion  
-032 - MaxOfArray.java                     	 -- src\recursion  
-033 - FirstIndexOfOccurrence.java         	 -- src\recursion  
-034 - LastIndexOfOccurrence.java          	 -- src\recursion  
-035 - AllIndices.java                     	 -- src\recursion  
-036 - SubstringBasics.java                	 -- src\recursion  
-037 - GetSubsequence.java                 	 -- src\recursion  
-038 - KeypadCombination.java              	 -- src\recursion  
-039 - GetStairsPath.java                  	 -- src\recursion  
-040 - GetMazePaths.java                   	 -- src\recursion  
-041 - GetMazePathsWithJumps.java          	 -- src\recursion  
-042 - PrintSubsequence.java               	 -- src\recursion  
-043 - PrintKeypadCombination.java         	 -- src\recursion  
-044 - PrintStairsPath.java                	 -- src\recursion  
-045 - TwoSum.java                         	 -- src\daily\sixteenApril
-046 - Palindrome.java                     	 -- src\daily\sixteenApril
-047 - Max.java                            	 -- src\daily\sixteenApril
-048 - ReverseString.java                  	 -- src\daily\sixteenApril
-049 - RomanToInteger.java                 	 -- src\leetcode\interview150
-050 - FirstNonRepeatingChar.java          	 -- src\daily\seventeenApril
-051 - ReverseAnInteger.java               	 -- src\daily\seventeenApril
-052 - ValidParenthesis.java               	 -- src\daily\seventeenApril
-053 - RemoveDuplicates.java               	 -- src\daily\eighteenApril
-054 - MoveZeros.java                      	 -- src\daily\eighteenApril
-055 - RotateArray.java                    	 -- src\daily\nineteenApril
-056 - Arangram.java                       	 -- src\daily\nineteenApril
-057 - RotatedAndSorted.java               	 -- src\daily\nineteenApril
-058 - LongestCommonPrefix.java            	 -- src\daily\nineteenApril
-059 - PrimeNumber.java                    	 -- src\daily\nineteenApril
-060 - PrintMazePath.java                  	 -- src\recursion  
-061 - PrintMazePathWithJumps.java         	 -- src\recursion  
-062 - PrintPermutation.java               	 -- src\recursion  
-063 - PrintEncodings.java                 	 -- src\recursion  
-064 - FloodFill.java                      	 -- src\recursion  
-065 - SumSubsets.java                     	 -- src\recursion  
-066 - NQueens.java                        	 -- src\recursion  
-067 - KnightsTour.java                    	 -- src\recursion  
-068 - SpanOfArray.java                    	 -- src\arrays     
-069 - BarChart.java                       	 -- src\arrays     
-070 - SumOfArrays.java                    	 -- src\arrays     
-071 - DifferenceOfArrays.java             	 -- src\arrays     
-072 - SecondLargestElement.java           	 -- src\daily\twentyfourthApril
-073 - ArraySubset.java                    	 -- src\daily\twentyfourthApril
-074 - LongestConsecutiveSubsequence.java  	 -- src\daily\twentyfourthApril
-075 - LongestSubstringWithoutRepeatingCharacters.java 	 -- src\daily\twentyfifthApril
-076 - DuplicateBrackets.java              	 -- src\stack      
-077 - BalancedBrackets.java               	 -- src\stack      
-078 - NextGreaterElementToRight.java      	 -- src\stack      
-079 - StockSpan.java                      	 -- src\stack      
-080 - LargestAreaHistogram.java           	 -- src\stack      
-081 - SlidingWindowMaximum.java           	 -- src\slidingWindow
+001 - Main.java                           	 -- src             08-10-2024 - 19:38:18 - Tue
+002 - Linear_search.java                  	 -- src\searches    08-10-2024 - 19:45:42 - Tue
+003 - Heap.java                           	 -- src             09-10-2024 - 23:05:31 - Wed
+004 - MergeSortedArray.java               	 -- src\leetcode\interview150 08-04-2025 - 18:31:21 - Tue
+005 - RemoveElement.java                  	 -- src\leetcode\interview150 08-04-2025 - 18:52:30 - Tue
+006 - RemoveDuplicate.java                	 -- src\leetcode\interview150 08-04-2025 - 20:15:19 - Tue
+007 - MajorityElement.java                	 -- src\leetcode\interview150 09-04-2025 - 15:26:18 - Wed
+008 - BinarySearch.java                   	 -- src\searches    09-04-2025 - 17:56:05 - Wed
+009 - BubbleSort.java                     	 -- src\sorts       09-04-2025 - 19:39:47 - Wed
+010 - SelectionSort.java                  	 -- src\sorts       09-04-2025 - 19:52:48 - Wed
+011 - Sort.java                           	 -- src\sorts       09-04-2025 - 19:52:57 - Wed
+012 - InsertionSort.java                  	 -- src\sorts       09-04-2025 - 20:33:53 - Wed
+013 - QuickSort.java                      	 -- src\sorts       10-04-2025 - 00:15:40 - Thu
+014 - LeftTriangle.java                   	 -- src\patterns    10-04-2025 - 12:37:29 - Thu
+015 - RightTriangle.java                  	 -- src\patterns    10-04-2025 - 12:40:06 - Thu
+016 - Pyramid.java                        	 -- src\patterns    10-04-2025 - 12:50:30 - Thu
+017 - UpsideDownTriangle.java             	 -- src\patterns    10-04-2025 - 14:14:24 - Thu
+018 - UpsideDownTriangle1.java            	 -- src\patterns    10-04-2025 - 14:17:34 - Thu
+019 - UpsideDownPyramid.java              	 -- src\patterns    10-04-2025 - 14:23:08 - Thu
+020 - Diamond.java                        	 -- src\patterns    10-04-2025 - 14:24:43 - Thu
+021 - LeftDiagonal.java                   	 -- src\patterns    10-04-2025 - 15:50:40 - Thu
+022 - RightDiagonal.java                  	 -- src\patterns    10-04-2025 - 15:54:46 - Thu
+023 - Diagonals.java                      	 -- src\patterns    10-04-2025 - 15:57:26 - Thu
+024 - NumTriangle.java                    	 -- src\patterns    10-04-2025 - 16:01:33 - Thu
+025 - Table.java                          	 -- src\patterns    10-04-2025 - 22:44:08 - Thu
+026 - Basic.java                          	 -- src\recursion   10-04-2025 - 23:17:42 - Thu
+027 - Factorial.java                      	 -- src\recursion   10-04-2025 - 23:38:48 - Thu
+028 - Power.java                          	 -- src\recursion   10-04-2025 - 23:43:27 - Thu
+029 - PZZ.java                            	 -- src\recursion   11-04-2025 - 00:06:23 - Fri
+030 - TowerOfHanoi.java                   	 -- src\recursion   11-04-2025 - 11:32:54 - Fri
+031 - PrintArray.java                     	 -- src\recursion   11-04-2025 - 15:29:33 - Fri
+032 - MaxOfArray.java                     	 -- src\recursion   11-04-2025 - 15:50:21 - Fri
+033 - FirstIndexOfOccurrence.java         	 -- src\recursion   11-04-2025 - 19:11:27 - Fri
+034 - LastIndexOfOccurrence.java          	 -- src\recursion   11-04-2025 - 19:32:49 - Fri
+035 - AllIndices.java                     	 -- src\recursion   12-04-2025 - 09:20:37 - Sat
+036 - SubstringBasics.java                	 -- src\recursion   12-04-2025 - 10:10:33 - Sat
+037 - GetSubsequence.java                 	 -- src\recursion   12-04-2025 - 17:27:09 - Sat
+038 - KeypadCombination.java              	 -- src\recursion   13-04-2025 - 16:02:00 - Sun
+039 - GetStairsPath.java                  	 -- src\recursion   13-04-2025 - 23:01:06 - Sun
+040 - GetMazePaths.java                   	 -- src\recursion   13-04-2025 - 23:39:13 - Sun
+041 - GetMazePathsWithJumps.java          	 -- src\recursion   14-04-2025 - 15:53:46 - Mon
+042 - PrintSubsequence.java               	 -- src\recursion   16-04-2025 - 12:55:33 - Wed
+043 - PrintKeypadCombination.java         	 -- src\recursion   16-04-2025 - 15:46:12 - Wed
+044 - PrintStairsPath.java                	 -- src\recursion   16-04-2025 - 17:48:00 - Wed
+045 - TwoSum.java                         	 -- src\daily\sixteenApril 16-04-2025 - 19:11:41 - Wed
+046 - Palindrome.java                     	 -- src\daily\sixteenApril 16-04-2025 - 19:28:48 - Wed
+047 - Max.java                            	 -- src\daily\sixteenApril 16-04-2025 - 19:52:13 - Wed
+048 - ReverseString.java                  	 -- src\daily\sixteenApril 16-04-2025 - 20:03:34 - Wed
+049 - RomanToInteger.java                 	 -- src\leetcode\interview150 17-04-2025 - 00:01:50 - Thu
+050 - FirstNonRepeatingChar.java          	 -- src\daily\seventeenApril 17-04-2025 - 10:31:19 - Thu
+051 - ReverseAnInteger.java               	 -- src\daily\seventeenApril 18-04-2025 - 00:57:22 - Fri
+052 - ValidParenthesis.java               	 -- src\daily\seventeenApril 18-04-2025 - 01:04:07 - Fri
+053 - RemoveDuplicates.java               	 -- src\daily\eighteenApril 18-04-2025 - 09:57:27 - Fri
+054 - MoveZeros.java                      	 -- src\daily\eighteenApril 18-04-2025 - 10:09:11 - Fri
+055 - RotateArray.java                    	 -- src\daily\nineteenApril 19-04-2025 - 12:51:43 - Sat
+056 - Arangram.java                       	 -- src\daily\nineteenApril 19-04-2025 - 12:55:06 - Sat
+057 - RotatedAndSorted.java               	 -- src\daily\nineteenApril 19-04-2025 - 13:06:30 - Sat
+058 - LongestCommonPrefix.java            	 -- src\daily\nineteenApril 19-04-2025 - 14:54:16 - Sat
+059 - PrimeNumber.java                    	 -- src\daily\nineteenApril 19-04-2025 - 20:04:20 - Sat
+060 - PrintMazePath.java                  	 -- src\recursion   20-04-2025 - 17:09:25 - Sun
+061 - PrintMazePathWithJumps.java         	 -- src\recursion   20-04-2025 - 17:15:52 - Sun
+062 - PrintPermutation.java               	 -- src\recursion   20-04-2025 - 17:36:04 - Sun
+063 - PrintEncodings.java                 	 -- src\recursion   20-04-2025 - 20:04:04 - Sun
+064 - FloodFill.java                      	 -- src\recursion   21-04-2025 - 14:14:01 - Mon
+065 - SumSubsets.java                     	 -- src\recursion   21-04-2025 - 15:39:57 - Mon
+066 - NQueens.java                        	 -- src\recursion   22-04-2025 - 10:08:42 - Tue
+067 - KnightsTour.java                    	 -- src\recursion   22-04-2025 - 16:18:47 - Tue
+068 - SpanOfArray.java                    	 -- src\arrays      22-04-2025 - 19:14:53 - Tue
+069 - BarChart.java                       	 -- src\arrays      22-04-2025 - 19:19:17 - Tue
+070 - SumOfArrays.java                    	 -- src\arrays      22-04-2025 - 21:58:52 - Tue
+071 - DifferenceOfArrays.java             	 -- src\arrays      23-04-2025 - 11:15:07 - Wed
+072 - SecondLargestElement.java           	 -- src\daily\twentyfourthApril 24-04-2025 - 13:41:36 - Thu
+073 - ArraySubset.java                    	 -- src\daily\twentyfourthApril 24-04-2025 - 18:12:17 - Thu
+074 - LongestConsecutiveSubsequence.java  	 -- src\daily\twentyfourthApril 24-04-2025 - 18:33:48 - Thu
+075 - LongestSubstringWithoutRepeatingCharacters.java 	 -- src\daily\twentyfifthApril 25-04-2025 - 10:37:01 - Fri
+076 - DuplicateBrackets.java              	 -- src\stack       25-04-2025 - 15:42:46 - Fri
+077 - BalancedBrackets.java               	 -- src\stack       26-04-2025 - 15:23:33 - Sat
+078 - NextGreaterElementToRight.java      	 -- src\stack       30-04-2025 - 09:06:28 - Wed
+079 - StockSpan.java                      	 -- src\stack       30-04-2025 - 14:18:39 - Wed
+080 - LargestAreaHistogram.java           	 -- src\stack       01-05-2025 - 16:07:20 - Thu
+081 - SlidingWindowMaximum.java           	 -- src\slidingWindow 01-05-2025 - 20:10:16 - Thu
+082 - InfixEvaluation.java                	 -- src\stack       02-05-2025 - 16:41:23 - Fri
+083 - InfixConversion.java                	 -- src\stack       03-05-2025 - 22:15:33 - Sat
+084 - PostfixEvaluationAndConversion.java 	 -- src\stack       03-05-2025 - 22:36:19 - Sat
+085 - PrefixEvaluationAndConversion.java  	 -- src\stack       04-05-2025 - 15:39:51 - Sun
