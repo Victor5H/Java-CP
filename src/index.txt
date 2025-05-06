@@ -85,3 +85,8 @@
 085 - PrefixEvaluationAndConversion.java  	 -- src\stack       04-05-2025 - 15:39:51 - Sun
 086 - CelebrityProblem.java               	 -- src\stack       04-05-2025 - 15:45:06 - Sun
 087 - MergeOverlappingInterval.java       	 -- src\stack       04-05-2025 - 17:59:01 - Sun
+088 - SmallestNumberFollowingPattern.java 	 -- src\stack       05-05-2025 - 09:21:13 - Mon
+089 - OOPtest.java                        	 -- src             05-05-2025 - 14:35:09 - Mon
+090 - TwoSumII.java                       	 -- src\leetcode\interview150 05-05-2025 - 17:45:58 - Mon
+091 - ExcelSheetColumnTitle.java          	 -- src\leetcode\interview150 05-05-2025 - 18:50:38 - Mon
+092 - FactorialTraillingZeros.java        	 -- src\leetcode\interview150 06-05-2025 - 09:03:25 - Tue
