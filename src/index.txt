@@ -83,3 +83,5 @@
 083 - InfixConversion.java                	 -- src\stack       03-05-2025 - 22:15:33 - Sat
 084 - PostfixEvaluationAndConversion.java 	 -- src\stack       03-05-2025 - 22:36:19 - Sat
 085 - PrefixEvaluationAndConversion.java  	 -- src\stack       04-05-2025 - 15:39:51 - Sun
+086 - CelebrityProblem.java               	 -- src\stack       04-05-2025 - 15:45:06 - Sun
+087 - MergeOverlappingInterval.java       	 -- src\stack       04-05-2025 - 17:59:01 - Sun
