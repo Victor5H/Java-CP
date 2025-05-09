@@ -12,6 +12,7 @@ public class Tree {
         inOrder(root);
         System.out.println();
         System.out.println(maxHeight(root));
+        System.out.println(SumOfTree.sumOfTree(root));
     }
     public static TreeNode build(int [] arr, int index){
         if(index>= arr.length)
