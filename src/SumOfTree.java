@@ -1,4 +1,4 @@
-import leetcode.interview150.TreeNode;
+import dsComponents.TreeNode;
 
 public class SumOfTree {
     public static int sumOfTree(TreeNode node){

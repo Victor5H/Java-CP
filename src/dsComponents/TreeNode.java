@@ -1,4 +1,4 @@
-package leetcode.interview150;
+package dsComponents;
 
 public class TreeNode {
     public int val;
@@ -20,7 +20,7 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "leetcode.interview150.TreeNode{" +
+        return "dsComponents.TreeNode{" +
                 "val=" + val +
                 ", left=" + left +
                 ", right=" + right +

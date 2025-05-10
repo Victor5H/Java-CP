@@ -1,10 +1,5 @@
-class Node{
-    public int val;
-    public Node next;
-    public Node(int val){
-        this.val = val;
-    }
-}
+import dsComponents.Node;
+
 public class LinkedList {
     public static void main(String[] args) {
         int [] nums = new int[]{1,4,3,5,3,3,67,3};

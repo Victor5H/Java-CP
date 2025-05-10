@@ -92,7 +92,8 @@
 092 - FactorialTraillingZeros.java        	 -- src\leetcode\interview150 06-05-2025 - 09:03:25 - Tue
 093 - Tree.java                           	 -- src             07-05-2025 - 17:04:39 - Wed
 094 - SumRootToLeafNumbers.java           	 -- src\leetcode\interview150 08-05-2025 - 12:11:16 - Thu
-095 - TreeNode.java                       	 -- src\leetcode\interview150 08-05-2025 - 12:11:44 - Thu
+095 - TreeNode.java                       	 -- src\dsComponents 08-05-2025 - 12:11:44 - Thu
 096 - SumOfTree.java                      	 -- src             08-05-2025 - 12:37:25 - Thu
 097 - LinkedList.java                     	 -- src             08-05-2025 - 14:24:45 - Thu
 098 - SingleNumberI.java                  	 -- src\leetcode\interview150 08-05-2025 - 15:59:17 - Thu
+099 - Node.java                           	 -- src\dsComponents 09-05-2025 - 11:13:16 - Fri
