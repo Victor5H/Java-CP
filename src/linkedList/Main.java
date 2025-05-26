@@ -13,10 +13,8 @@ public class Main {
         l1.addLast(4);
         l1.addLast(5);
         l1.printList();
-        l1.kReverse(9);
+        l1.reverseLLRec();
         l1.printList();
-        l1.displayReverse();
-
 
     }
 
@@ -62,6 +60,22 @@ public class Main {
         }
         public void displayReverse(){
             trav(head);
+        }
+        Node reverseLP;
+        private void reverseHelper(Node rightP, int ind){
+            if(rightP==null) return;
+            reverseHelper(rightP.next,ind+1);
+            if(size/2<ind){
+                int temp = rightP.val;
+                rightP.val = reverseLP.val;
+                reverseLP.val = temp;
+                reverseLP = reverseLP.next;
+            }
+        }
+        public void reverseLLRec(){
+            // reversing a linked list by swapping value with recursion
+            reverseLP = head;
+            reverseHelper(head,0);
         }
         private void trav(Node n){
             if (n == null) return;
