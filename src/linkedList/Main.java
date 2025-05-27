@@ -12,9 +12,11 @@ public class Main {
         l1.addLast(3);
         l1.addLast(4);
         l1.addLast(5);
+        l1.addLast(6);
         l1.printList();
-        l1.reverseLLRec();
+        l1.fold();
         l1.printList();
+
 
     }
 
@@ -77,6 +79,38 @@ public class Main {
             reverseLP = head;
             reverseHelper(head,0);
         }
+        private boolean palindromeHelper(Node rightP){
+            if(rightP==null) return true;
+            boolean res =  palindromeHelper(rightP.next);
+            if(!res) return false;
+            if(rightP.val==reverseLP.val)
+                    reverseLP = reverseLP.next;
+            else return false;
+            return res;
+        }
+
+        public boolean isPalindrome(){
+            reverseLP = head;
+            return palindromeHelper(head);
+        }
+        private void foldHelper(Node rightP, int ind){
+            if(rightP==null) return ;
+            foldHelper(rightP.next, ind+1);
+            if(ind >size/2) {
+                Node next = reverseLP.next;
+                reverseLP.next = rightP;
+                rightP.next = next;
+                reverseLP = next;
+            } else if (ind == size / 2) {
+                tail = rightP;
+                tail.next = null;
+            }
+        }
+        public void fold(){
+            reverseLP = head;
+            foldHelper(head,0);
+        }
+
         private void trav(Node n){
             if (n == null) return;
             trav(n.next);
