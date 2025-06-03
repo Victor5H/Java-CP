@@ -5,18 +5,20 @@ import dsComponents.Node;
 public class Main {
     public static void main(String[] args) {
         LinkedList l1 = new LinkedList();
+        LinkedList l2 = new LinkedList();
 //        l1.addLast(2);
 //        l1.addLast(4);
-        l1.addLast(1);
+        l1.addLast(9);
+        l1.addLast(2);
         l1.addLast(2);
         l1.addLast(3);
-        l1.addLast(4);
-        l1.addLast(5);
-        l1.addLast(6);
+        l2.addLast(9);
+        l2.addLast(5);
+        l2.addLast(9);
         l1.printList();
-        l1.fold();
-        l1.printList();
-
+        l2.printList();
+        LinkedList add = LinkedList.add(l1,l2);
+        add.printList();
 
     }
 
@@ -72,6 +74,7 @@ public class Main {
                 rightP.val = reverseLP.val;
                 reverseLP.val = temp;
                 reverseLP = reverseLP.next;
+                reverseLP = reverseLP.next;
             }
         }
         public void reverseLLRec(){
@@ -110,7 +113,52 @@ public class Main {
             reverseLP = head;
             foldHelper(head,0);
         }
+        private static LinkedList addRes;
+        public static int addHelper(Node n1, int pv1, Node n2, int pv2){
+            if (pv1==0 || pv2==0) return 0;
 
+            int carry = 0,sum=0;
+            if (pv1>pv2) {
+                carry = addHelper(n1.next, pv1 - 1, n2, pv2);
+                sum = carry+n1.val;
+                carry=0;
+                if(sum>9){
+                    addRes.addFirst(sum%10);
+                    carry = sum/10;
+                }
+                else addRes.addFirst(sum);
+                return carry;
+            }
+            else if (pv2>pv1) {
+                carry = addHelper(n1, pv1, n2.next, pv2 - 1);
+                sum = carry+n2.val;
+                carry=0;
+                if(sum>9){
+                    addRes.addFirst(sum%10);
+                    carry = sum/10;
+                }
+                else addRes.addFirst(sum);
+                return carry;
+            }
+            else
+                carry= addHelper(n1.next,pv1-1,n2.next,pv2-1);
+
+            sum = n1.val+n2.val+carry;
+            carry=0;
+            if(sum>9){
+                addRes.addFirst(sum%10);
+                carry = sum/10;
+            }
+            else addRes.addFirst(sum);
+            return carry;
+        }
+        public static LinkedList add(LinkedList l1, LinkedList l2){
+            addRes =  new LinkedList();
+            int carry = addHelper(l1.head,l1.size,l2.head,l2.size);
+            System.out.println(carry);
+            if(carry!=0) addRes.addFirst(carry);
+            return addRes;
+        }
         private void trav(Node n){
             if (n == null) return;
             trav(n.next);
