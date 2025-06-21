@@ -2,6 +2,9 @@ package linkedList;
 
 import dsComponents.Node;
 
+import java.util.HashMap;
+import java.util.TreeMap;
+
 public class Main {
     public static void main(String[] args) {
         LinkedList l1 = new LinkedList();
@@ -19,6 +22,13 @@ public class Main {
         l2.printList();
         LinkedList add = LinkedList.add(l1,l2);
         add.printList();
+        //intersecrtion
+        LinkedList l3 = new LinkedList();
+        LinkedList l4 = new LinkedList();
+        l3.addLast(1);
+        l3.addLast(2);
+        l4.addLast(3);
+        l4.addLast(4);
 
     }
 
@@ -112,6 +122,31 @@ public class Main {
         public void fold(){
             reverseLP = head;
             foldHelper(head,0);
+        }
+        public static int intersection(LinkedList l1, LinkedList l2) {
+           int ahead = 0;
+           Node trav1 = l1.head;
+           Node trav2 = l2.head;
+            if(l1.size==l2.size) {
+               ahead=0;
+           }
+            else if(l1.size>l2.size){
+                ahead = l1.size-l2.size;
+                for (int i = 0; i < ahead; i++) {
+                    trav1=trav1.next;
+                }
+           }
+            else if(l2.size>l1.size){
+                ahead = l2.size-l1.size;
+                for (int i = 0; i < ahead; i++) {
+                    trav2=trav2.next;
+                }
+            }
+            while (trav1!=trav2){
+                trav1 = trav1.next;
+                trav2 = trav2.next;
+            }
+            return trav2.val;
         }
         private static LinkedList addRes;
         public static int addHelper(Node n1, int pv1, Node n2, int pv2){
