@@ -1,6 +1,8 @@
 package genericTree;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 import java.util.Stack;
 
 class Node {
@@ -69,6 +71,69 @@ public class Main {
         }
         return max+1;
     }
+    public static void traversal(Node root){
+        System.out.println("Node pre "+root.val);
+        for (Node c: root.children){
+            System.out.println("Edge pre "+root.val+" -- "+ c.val);
+            traversal(c);
+            System.out.println("Edge post "+root.val+" -- "+ c.val);
+        }
+        System.out.println("Node post "+root.val);
+    }
+    public static void levelOrderTraversal(Node root){
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node n = queue.remove();
+            System.out.println(n.val);
+            for (Node c: n.children){
+                queue.add(c);
+            }
+        }
+    }
+    public static void levelOrderTraversalLinewise(Node root){
+        Queue<Node> bQueue = new ArrayDeque<>();
+        bQueue.add(root);
+        Queue<Node> cQueue = new ArrayDeque<>();
+        while (!bQueue.isEmpty() || !cQueue.isEmpty()){
+            Node n = bQueue.remove();
+
+            System.out.print(n.val+" ");
+            for (Node c: n.children){
+                cQueue.add(c);
+            }
+            if(bQueue.isEmpty()){
+                System.out.println();
+                bQueue = cQueue;
+                cQueue = new ArrayDeque<>();
+            }
+        }
+    }
+    public static void levelOrderTraversalLinewiseZZ(Node root){
+        Queue<Node> bQueue = new ArrayDeque<>();
+        bQueue.add(root);
+        Queue<Node> cQueue = new ArrayDeque<>();
+        int count =2;
+        while (!bQueue.isEmpty() || !cQueue.isEmpty()){
+            Node n = bQueue.remove();
+            System.out.print(n.val+" ");
+            if (count%2==0){
+                for (int i = n.children.size()-1; i >= 0; i--) {
+                    cQueue.add(n.children.get(i));
+                }
+            }else {
+                for (Node c : n.children) {
+                    cQueue.add(c);
+                }
+            }
+            count++;
+            if(bQueue.isEmpty()){
+                System.out.println();
+                bQueue = cQueue;
+                cQueue = new ArrayDeque<>();
+            }
+        }
+    }
     public static void main(String[] args) {
         int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
         Node root = construct(arr);
@@ -76,5 +141,10 @@ public class Main {
         System.out.println("Size is: "+size(root));
         System.out.println("Max of tree is: "+max(root));
         System.out.println("Max height of tree is: "+height(root));
+        //traversal(root);
+        //levelOrderTraversal(root);
+        levelOrderTraversalLinewise(root);
+        System.out.println();
+        levelOrderTraversalLinewiseZZ(root);
     }
 }
