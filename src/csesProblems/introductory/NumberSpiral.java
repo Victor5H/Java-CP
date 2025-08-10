@@ -1,4 +1,4 @@
-package csesProblems;
+package csesProblems.introductory;
 
 import java.util.Scanner;
 
