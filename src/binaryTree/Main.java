@@ -332,7 +332,7 @@ public class Main {
         System.out.println("removing leaves");
         removeLeaves(root);
         display(root);
-        System.out.println(helper(root));
+        System.out.println(isBalanced(root));
     }
 
 }
