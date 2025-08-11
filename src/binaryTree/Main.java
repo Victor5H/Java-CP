@@ -242,6 +242,59 @@ public class Main {
         pathToLeafFromRoot(root.left,path+" "+root.data,sum+root.data,low,high);
         pathToLeafFromRoot(root.right,path+" "+root.data,sum+root.data,low,high);
     }
+    public static void transformToLeftClonedTree(Node root){
+        if (root==null)return;
+        Node n = new Node(root.data,root.left,null);
+        root.left = n;
+        transformToLeftClonedTree(n.left);
+        transformToLeftClonedTree(root.right);
+    }
+    public static void transformBackFromLeftClonedTree(Node root){
+        if (root==null)return;
+        root.left = root.left.left;
+        transformBackFromLeftClonedTree(root.left);
+        transformBackFromLeftClonedTree(root.right);
+    }
+    public static void printSingleChild(Node root){
+        if (root==null) return;
+        if(root.right==null && root.left!=null){
+            System.out.println(root.left.data);
+        }
+        if(root.left==null&& root.right!=null){
+            System.out.println(root.right.data);
+        }
+        printSingleChild(root.left);
+        printSingleChild(root.right);
+    }
+    public static Node removeLeaves(Node root){
+//        if (root==null) return;
+//        if(root.left!=null){
+//            if(root.left.left==null && root.left.right==null)
+//                root.left=null;
+//        }
+//        if(root.right!=null){
+//            if(root.right.left==null && root.right.right==null)
+//                root.right=null;
+//        }
+//        removeLeaves(root.left);
+//        removeLeaves(root.right);
+
+        if (root==null) return null;
+        if (root.left==null&& root.right==null) return null;
+        root.left = removeLeaves(root.left);
+        root.right = removeLeaves(root.right);
+        return root;
+    }
+//    https://leetcode.com/problems/balanced-binary-tree/description/
+    public static int isBalanced(Node root){
+        if(root==null) return 0;
+        int l = isBalanced(root.left);
+        int r = isBalanced(root.right);
+        if(l==-1 || r==-1) return -1;
+        if(Math.abs(l-r)<=1)
+            return Math.max(l,r)+1;
+        return -1;
+    }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
         Node root = construct(arr);
@@ -270,7 +323,16 @@ public class Main {
         System.out.println("2 nodes far from root");
         kNodesFar(root,12,2);
         pathToLeafFromRoot(root,"",0,0,88);
-
+        transformToLeftClonedTree(root);
+        display(root);
+        transformBackFromLeftClonedTree(root);
+        System.out.println("original");
+        display(root);
+//        printSingleChild(root);
+        System.out.println("removing leaves");
+        removeLeaves(root);
+        display(root);
+        System.out.println(helper(root));
     }
 
 }
