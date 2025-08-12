@@ -3,53 +3,53 @@ package binaryTree;
 import java.util.*;
 
 public class Main {
-    public static class Node{
-        Integer data;
-        Node left;
-        Node right;
-        Node(Integer data, Node left, Node right){
-            this.data = data;
+    public static class TreeNode {
+        Integer val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(Integer val, TreeNode left, TreeNode right){
+            this.val = val;
             this.left = left;
             this.right = right;
         }
         @Override
         public String toString() {
             return "Node{" +
-                    "data=" + data +
+                    "data=" + val +
                     ", left=" + left +
                     ", right=" + right +
                     '}';
         }
     }
     public static class Pair{
-        Node node;
+        TreeNode treeNode;
         int state;
-        Pair(Node node, int state){
-            this.node=node;
+        Pair(TreeNode treeNode, int state){
+            this.treeNode = treeNode;
             this.state = state;
         }
 
         @Override
         public String toString() {
             return "Pair{" +
-                    "node=" + node +
+                    "node=" + treeNode +
                     ", state=" + state +
                     '}';
         }
     }
-    public static void display(Node root){
+    public static void display(TreeNode root){
         if (root==null) return;
         String str="";
-        str+=root.left==null? ".":root.left.data+"";
-        str+="<- "+root.data+" ->";
-        str+=root.right==null? ".":root.right.data+"";
+        str+=root.left==null? ".":root.left.val +"";
+        str+="<- "+root.val +" ->";
+        str+=root.right==null? ".":root.right.val +"";
         System.out.println(str);
         display(root.left);
         display(root.right);
     }
-    public static Node construct(Integer [] arr){
+    public static TreeNode construct(Integer [] arr){
         Stack<Pair> stack = new Stack<>();
-        Node root = new Node(arr[0],null,null);
+        TreeNode root = new TreeNode(arr[0],null,null);
         Pair rootP = new Pair(root,1);
         stack.push(rootP);
         int idx = 0;
@@ -61,8 +61,8 @@ public class Main {
                 idx++;
                 // right child
                 if(arr[idx]!=null) {
-                    Node right = new Node(arr[idx], null, null);
-                    top.node.right = right;
+                    TreeNode right = new TreeNode(arr[idx], null, null);
+                    top.treeNode.right = right;
                     Pair np = new Pair(right,1);
                     stack.push(np);
                 }
@@ -71,8 +71,8 @@ public class Main {
             else {
                 idx++;
                 if(arr[idx]!=null) {
-                    Node left = new Node(arr[idx], null, null);
-                    top.node.left = left;
+                    TreeNode left = new TreeNode(arr[idx], null, null);
+                    top.treeNode.left = left;
                     Pair np = new Pair(left,1);
                     stack.push(np);
                 }
@@ -82,14 +82,14 @@ public class Main {
         }
         return root;
     }
-    public static int max(Node root){
+    public static int max(TreeNode root){
         if (root==null) return Integer.MIN_VALUE; // min value being the identity of max
         int left = max(root.left);
         int right = max(root.right);
         int m = Math.max(left,right);
-        return Math.max(m,root.data);
+        return Math.max(m,root.val);
     }
-    public static Integer min(Node root){
+    public static Integer min(TreeNode root){
 //        if (root==null) return null;
 //        if(root.left==null && root.right==null)
 //            return root.data;
@@ -107,50 +107,50 @@ public class Main {
         int left = min(root.left);
         int right = min(root.right);
         int m = Math.min(left,right);
-        return Math.min(m,root.data);
+        return Math.min(m,root.val);
     }
-    public static int sum(Node root){
+    public static int sum(TreeNode root){
         if (root==null) return 0;
-        return root.data+sum(root.left)+sum(root.right);
+        return root.val +sum(root.left)+sum(root.right);
     }
-    public static Integer product(Node root){
+    public static Integer product(TreeNode root){
         if (root==null) return 1;
-        return root.data+product(root.left)*product(root.right);
+        return root.val +product(root.left)*product(root.right);
     }
-    public static int size(Node root){
+    public static int size(TreeNode root){
         if (root==null) return 0; // 0 for nodes, -1 for edges
         return size(root.right)+size(root.left)+1;
     }
-    public static int height(Node root){
+    public static int height(TreeNode root){
         if(root==null) return 0;
         return Math.max(height(root.left),height(root.right))+1;
     }
-    public static void preOrder(Node root){
+    public static void preOrder(TreeNode root){
         if (root==null) return;
-        System.out.println(root.data);
+        System.out.println(root.val);
         preOrder(root.left);
         preOrder(root.right);
     }
-    public static void inOrder(Node root){
+    public static void inOrder(TreeNode root){
         if (root==null) return;
         inOrder(root.left);
-        System.out.println(root.data);
+        System.out.println(root.val);
         inOrder(root.right);
     }
-    public static void postOrder(Node root){
+    public static void postOrder(TreeNode root){
         if (root==null) return;
         postOrder(root.left);
         postOrder(root.right);
-        System.out.println(root.data);
+        System.out.println(root.val);
     }
-    public static void levelOrder(Node root){
-        Queue<Node> q = new LinkedList<>();
+    public static void levelOrder(TreeNode root){
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()){
             int count = q.size();
             for (int i = 0; i < count; i++) {
-                Node n = q.poll();
-                System.out.print(n.data+" ");
+                TreeNode n = q.poll();
+                System.out.print(n.val +" ");
                 if(n.left!=null)
                     q.add(n.left);
                 if (n.right!=null)
@@ -159,7 +159,7 @@ public class Main {
             System.out.println();
         }
     }
-    public static void iterativeOrders(Node root){
+    public static void iterativeOrders(TreeNode root){
 
         Stack<Pair> stack = new Stack<>();
         StringBuilder pre = new StringBuilder();
@@ -169,19 +169,19 @@ public class Main {
         while (!stack.isEmpty()) {
             Pair peek = stack.peek();
             if(peek.state==1){
-                pre.append(" ").append(peek.node.data);
-                if(peek.node.left!=null)
-                    stack.add(new Pair(peek.node.left,1));
+                pre.append(" ").append(peek.treeNode.val);
+                if(peek.treeNode.left!=null)
+                    stack.add(new Pair(peek.treeNode.left,1));
                 peek.state++;
             }
             else if(peek.state==2){
-                in.append(" ").append(peek.node.data);
-                if(peek.node.right!=null)
-                    stack.add(new Pair(peek.node.right,1));
+                in.append(" ").append(peek.treeNode.val);
+                if(peek.treeNode.right!=null)
+                    stack.add(new Pair(peek.treeNode.right,1));
                 peek.state++;
             }
             else{
-                post.append(" ").append(peek.node.data);
+                post.append(" ").append(peek.treeNode.val);
                 stack.pop();
             }
         }
@@ -189,10 +189,10 @@ public class Main {
         System.out.println("in order: "+in);
         System.out.println("post order: "+post);
     }
-    public static List<Node> nodeToRootPath =new ArrayList<>();
-    public static boolean nodeToRootPath(Node root, int find){
+    public static List<TreeNode> treeNodeToRootPath =new ArrayList<>();
+    public static boolean nodeToRootPath(TreeNode root, int find){
         boolean left=false,right=false;
-        if(root.data==find){ nodeToRootPath.add(root); return true;}
+        if(root.val ==find){ treeNodeToRootPath.add(root); return true;}
         if(root.left!=null){
             left = nodeToRootPath(root.left,find);
         }
@@ -200,73 +200,73 @@ public class Main {
             right = nodeToRootPath(root.right,find);
         }
         if(left|| right) {
-            nodeToRootPath.add(root);
+            treeNodeToRootPath.add(root);
             return true;
         }
         return false;
 
     }
-    public static void kLevelsDown(Node root, int k){
+    public static void kLevelsDown(TreeNode root, int k){
         if(root==null|| k<0) return;
         if(k==0){
-            System.out.println(root.data);
+            System.out.println(root.val);
         }
         kLevelsDown(root.left,k-1);
         kLevelsDown(root.right,k-1);
     }
-    public static void kLevelsDownWithBlocker(Node root, int k, Node blocker){
+    public static void kLevelsDownWithBlocker(TreeNode root, int k, TreeNode blocker){
         if(root==null || k<0 || root==blocker) return;
         if(k==0){
-            System.out.println(root.data);
+            System.out.println(root.val);
         }
         kLevelsDown(root.left,k-1);
         kLevelsDown(root.right,k-1);
     }
 //    https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
-    public static void kNodesFar(Node root, int target, int k){
-        nodeToRootPath = new ArrayList<>();
+    public static void kNodesFar(TreeNode root, int target, int k){
+        treeNodeToRootPath = new ArrayList<>();
         nodeToRootPath(root,target);
-        if(nodeToRootPath.isEmpty()) return;
-        for (int i = 0; i < nodeToRootPath.size(); i++) {
+        if(treeNodeToRootPath.isEmpty()) return;
+        for (int i = 0; i < treeNodeToRootPath.size(); i++) {
 //            using blocker to block from printing the same nodes again
-            kLevelsDownWithBlocker(nodeToRootPath.get(i),k-i,i==0?null:nodeToRootPath.get(i-1));
+            kLevelsDownWithBlocker(treeNodeToRootPath.get(i),k-i,i==0?null: treeNodeToRootPath.get(i-1));
         }
     }
-    public static void pathToLeafFromRoot(Node root, String path, int sum, int low, int high){
+    public static void pathToLeafFromRoot(TreeNode root, String path, int sum, int low, int high){
         if (root==null) return;
         if(root.left==null&& root.right==null){
             if(sum>=low && sum<=high)
                 System.out.println(path);
             return;
         }
-        pathToLeafFromRoot(root.left,path+" "+root.data,sum+root.data,low,high);
-        pathToLeafFromRoot(root.right,path+" "+root.data,sum+root.data,low,high);
+        pathToLeafFromRoot(root.left,path+" "+root.val,sum+root.val,low,high);
+        pathToLeafFromRoot(root.right,path+" "+root.val,sum+root.val,low,high);
     }
-    public static void transformToLeftClonedTree(Node root){
+    public static void transformToLeftClonedTree(TreeNode root){
         if (root==null)return;
-        Node n = new Node(root.data,root.left,null);
+        TreeNode n = new TreeNode(root.val,root.left,null);
         root.left = n;
         transformToLeftClonedTree(n.left);
         transformToLeftClonedTree(root.right);
     }
-    public static void transformBackFromLeftClonedTree(Node root){
+    public static void transformBackFromLeftClonedTree(TreeNode root){
         if (root==null)return;
         root.left = root.left.left;
         transformBackFromLeftClonedTree(root.left);
         transformBackFromLeftClonedTree(root.right);
     }
-    public static void printSingleChild(Node root){
+    public static void printSingleChild(TreeNode root){
         if (root==null) return;
         if(root.right==null && root.left!=null){
-            System.out.println(root.left.data);
+            System.out.println(root.left.val);
         }
         if(root.left==null&& root.right!=null){
-            System.out.println(root.right.data);
+            System.out.println(root.right.val);
         }
         printSingleChild(root.left);
         printSingleChild(root.right);
     }
-    public static Node removeLeaves(Node root){
+    public static TreeNode removeLeaves(TreeNode root){
 //        if (root==null) return;
 //        if(root.left!=null){
 //            if(root.left.left==null && root.left.right==null)
@@ -286,7 +286,7 @@ public class Main {
         return root;
     }
 //    https://leetcode.com/problems/balanced-binary-tree/description/
-    public static int isBalanced(Node root){
+    public static int isBalanced(TreeNode root){
         if(root==null) return 0;
         int l = isBalanced(root.left);
         int r = isBalanced(root.right);
@@ -295,9 +295,37 @@ public class Main {
             return Math.max(l,r)+1;
         return -1;
     }
+//    https://leetcode.com/problems/same-tree/
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        if(q==null && p==null) return true;
+        if(q==null || p==null) return false;
+        return p.val==q.val && isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+    }
+//    https://leetcode.com/problems/minimum-depth-of-binary-tree/
+    public static int minDepth(TreeNode root) {
+        if(root==null) return 0;
+        if(root.left==null && root.right==null) return 1;
+        int left=Integer.MAX_VALUE,right=Integer.MAX_VALUE;
+        if(root.left!=null)
+            left = minDepth(root.left);
+        if(root.right!=null)
+            right = minDepth(root.right);
+        return Math.min(left,right)+1;
+    }
+//    https://leetcode.com/problems/path-sum
+    public boolean toRootPathSum(TreeNode root, int targetSum, int sumSF){
+        if(root!=null && root.left==null && root.right==null){
+            sumSF+=root.val;
+            if(sumSF==targetSum) return true;
+            return false;
+        }
+        if(root==null) return false;
+        sumSF+=root.val;
+        return toRootPathSum(root.left,targetSum,sumSF)||toRootPathSum(root.right,targetSum,sumSF);
+    }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
-        Node root = construct(arr);
+        TreeNode root = construct(arr);
         display(root);
 //        System.out.println(root);
 //        System.out.println(max(root));
@@ -314,8 +342,8 @@ public class Main {
 //        iterativeOrders(root);
 //        nodeToRootPath(root,70);
 //        System.out.println("Node to root path of 70");
-        for(Node n: nodeToRootPath){
-            System.out.print(n.data+" ");
+        for(TreeNode n: treeNodeToRootPath){
+            System.out.print(n.val +" ");
         }
         System.out.println();
         System.out.println("2 level down from root");
