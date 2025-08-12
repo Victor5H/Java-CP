@@ -357,6 +357,7 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
     public static ArrayList<String> binaryTreePaths = new ArrayList<>();
     public static void binaryTreePaths(TreeNode root, StringBuilder pathSF){
         if(root==null) return;
+
         if(root.left==null && root.right==null){
             pathSF.append(root.val);
             binaryTreePaths.add(pathSF.toString());
@@ -376,6 +377,19 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
     }
     public static boolean isLeaf(TreeNode node){
         return node.left==null&&node.right==null;
+    }
+//    https://leetcode.com/problems/binary-tree-tilt/
+    static int tiltSum=0;
+    public static int tilt(TreeNode root){
+        if(root==null) return 0;
+        int sum=0;
+        int left = tilt(root.left);
+        int right = tilt(root.right);
+        sum=left+right+root.val;
+        int diff=Math.abs(left-right);
+        root.val = diff;
+        if(diff!=0) {tiltSum+=root.val;}
+        return sum;
     }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
@@ -417,6 +431,7 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         System.out.println(isBalanced(root));
         binaryTreePaths(root,new StringBuilder());
         System.out.println(binaryTreePaths);
+
     }
 
 }
