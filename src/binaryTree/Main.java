@@ -313,7 +313,7 @@ public class Main {
         return Math.min(left,right)+1;
     }
 //    https://leetcode.com/problems/path-sum
-    public boolean toRootPathSum(TreeNode root, int targetSum, int sumSF){
+    public static boolean toRootPathSum(TreeNode root, int targetSum, int sumSF){
         if(root!=null && root.left==null && root.right==null){
             sumSF+=root.val;
             if(sumSF==targetSum) return true;
@@ -322,6 +322,60 @@ public class Main {
         if(root==null) return false;
         sumSF+=root.val;
         return toRootPathSum(root.left,targetSum,sumSF)||toRootPathSum(root.right,targetSum,sumSF);
+    }
+//    https://leetcode.com/problems/binary-tree-level-order-traversal/
+static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
+    public static List<List<Integer>> levelOrderList(TreeNode root) {
+        if(root==null) return binaryLO;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            List<Integer> temp = new ArrayList<>();
+            int l = q.size();
+            for(int i=0;i<l;i++){
+                TreeNode poll = q.poll();
+                if(poll.left!=null)
+                    q.add(poll.left);
+                if(poll.right!=null)
+                    q.add(poll.right);
+                temp.add(poll.val);
+            }
+            binaryLO.add(temp);
+        }
+        return binaryLO;
+    }
+//    https://leetcode.com/problems/invert-binary-tree/
+    public static void invert(TreeNode root){
+        if(root == null) return;
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        invert(root.left);
+        invert(root.right);
+    }
+//    https://leetcode.com/problems/binary-tree-paths/
+    public static ArrayList<String> binaryTreePaths = new ArrayList<>();
+    public static void binaryTreePaths(TreeNode root, StringBuilder pathSF){
+        if(root==null) return;
+        if(root.left==null && root.right==null){
+            pathSF.append(root.val);
+            binaryTreePaths.add(pathSF.toString());
+        }
+        pathSF.append(root.val+"->");
+        binaryTreePaths(root.left,new StringBuilder(pathSF.toString()));
+        binaryTreePaths(root.right,pathSF);
+    }
+//    https://leetcode.com/problems/sum-of-left-leaves/
+    public static int leftLeafSum=0;
+    public static void sumOfLeftLeaves(TreeNode root){
+        if(root==null) return;
+        if(root.left!=null&&isLeaf(root.left))
+            leftLeafSum+=root.left.val;
+        sumOfLeftLeaves(root.left);
+        sumOfLeftLeaves(root.right);
+    }
+    public static boolean isLeaf(TreeNode node){
+        return node.left==null&&node.right==null;
     }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
@@ -358,9 +412,11 @@ public class Main {
         display(root);
 //        printSingleChild(root);
         System.out.println("removing leaves");
-        removeLeaves(root);
+//        removeLeaves(root);
         display(root);
         System.out.println(isBalanced(root));
+        binaryTreePaths(root,new StringBuilder());
+        System.out.println(binaryTreePaths);
     }
 
 }
