@@ -391,6 +391,31 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         if(diff!=0) {tiltSum+=root.val;}
         return sum;
     }
+//    https://leetcode.com/problems/search-in-a-binary-search-tree/
+    public static TreeNode searchBST(TreeNode root, int val) {
+        if(root==null) return null;
+        if(root.val==val) return root;
+        TreeNode left = searchBST(root.left,val);
+        if(left!=null) return left;
+        return searchBST(root.right,val);
+    }
+//    https://leetcode.com/problems/subtree-of-another-tree/
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if(root==null) return false;
+        if(root.val==subRoot.val)
+            if(isSameTree(root,subRoot)) return true;
+        return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot);
+    }
+//    https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+    public static TreeNode builder(int[] nums, int l, int h){
+        if(l<0 || h>nums.length) return null;
+        if(l>=h) return null;
+        int mid = l +(h-l)/2;
+        TreeNode root = new TreeNode(nums[mid],null,null);
+        root.left = builder(nums,l,mid);
+        root.right = builder(nums,mid+1,h);
+        return root;
+    }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
         TreeNode root = construct(arr);
@@ -431,6 +456,8 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         System.out.println(isBalanced(root));
         binaryTreePaths(root,new StringBuilder());
         System.out.println(binaryTreePaths);
+        int [] nums = {-10,-3,0,5,9};
+        System.out.println(builder(nums,0, nums.length));
 
     }
 
