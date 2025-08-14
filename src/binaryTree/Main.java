@@ -410,7 +410,7 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
     public static TreeNode builder(int[] nums, int l, int h){
         if(l<0 || h>nums.length) return null;
         if(l>=h) return null;
-        int mid = l +(h-l)/2;
+        int mid =  l+(h-l)/2;
         TreeNode root = new TreeNode(nums[mid],null,null);
         root.left = builder(nums,l,mid);
         root.right = builder(nums,mid+1,h);
@@ -458,6 +458,7 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         System.out.println(binaryTreePaths);
         int [] nums = {-10,-3,0,5,9};
         System.out.println(builder(nums,0, nums.length));
+System.out.println(builder(nums,0, nums.length));
 
     }
 
