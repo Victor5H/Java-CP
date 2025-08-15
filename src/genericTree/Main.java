@@ -264,21 +264,31 @@ public class Main {
         TreeNode root = new TreeNode(headID);
         map.put(headID, root);
         for (int i = 0; i < manager.length; i++) {
-            TreeNode baap;
-            if(manager[i]==-1)
+            TreeNode baap, beta;
+            if (manager[i] == -1)
                 continue;
-            if(map.containsKey(i)) {
-                if (!map.containsKey(manager[i])) {
+            if (map.containsKey(i)) {
+                beta = map.get(i);
+                if (map.containsKey(manager[i])) {
+                    baap = map.get(manager[i]);
+                } else {
                     baap = new TreeNode(manager[i]);
-                    map.put(baap.val, baap);
-                } else baap = map.get(manager[i]);
-                TreeNode beta = new TreeNode(i);
+                    map.put(manager[i], baap);
+                }
                 baap.children.add(beta);
-                map.put(beta.val, beta);
+            } else {
+                beta = new TreeNode(i);
+                if (map.containsKey(manager[i])) {
+                    baap = map.get(manager[i]);
+                } else {
+                    baap = new TreeNode(manager[i]);
+                    map.put(manager[i], baap);
+                }
+                baap.children.add(beta);
+                map.put(i, beta);
             }
 
         }
-        map.values().stream().forEach(r->display(r));
         return root;
     }
 
@@ -330,8 +340,8 @@ public class Main {
         System.out.println(findMaxSumSubTree(root));
         System.out.println(maxSumSubTreeTreeNode);
         System.out.println("---");
-        display(managerTreeBuilder(6, new int[]{1, 2, 3, 4, 5, 6, -1}));
-//        System.out.println(numOfMinutes(7,6,new int[]{1,2,3,4,5,6,-1},new  int[]{0,6,5,4,3,2,1}));
+//        display(managerTreeBuilder(6, new int[]{1, 2, 3, 4, 5, 6,-1}));
+        System.out.println(numOfMinutes(7, 6, new int[]{1, 2, 3, 4, 5, 6, -1}, new int[]{0, 6, 5, 4, 3, 2, 1}));
 
     }
 }
