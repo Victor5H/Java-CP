@@ -255,51 +255,51 @@ public class Main {
         }
         return sum;
     }
-//    diameter is the max no. of edges between 2 nodes in a tree
+
+    //    diameter is the max no. of edges between 2 nodes in a tree
 //    public static int diameter()
 //    https://leetcode.com/problems/time-needed-to-inform-all-employees/
-    public static TreeNode managerTreeBuilder(int headID,int[] manager){
-        HashMap<Integer,TreeNode> map = new HashMap<>();
+    public static TreeNode managerTreeBuilder(int headID, int[] manager) {
+        HashMap<Integer, TreeNode> map = new HashMap<>();
         TreeNode root = new TreeNode(headID);
-        map.put(headID,root);
-        int j=0;
-        for(int i=0; i<manager.length;i++){
-            j=manager[i];
-            if(!map.containsKey(i)){
-                TreeNode baap;
-                if(manager[j]==-1) {
-                    baap = map.get(headID);
-                }else {
-                    while (!map.containsKey(manager[j])) {
-                        j = manager[j];
-                    }
-                    j = manager[j];
-                    baap = map.get(j);
-                }
-
+        map.put(headID, root);
+        for (int i = 0; i < manager.length; i++) {
+            TreeNode baap;
+            if(manager[i]==-1)
+                continue;
+            if(map.containsKey(i)) {
+                if (!map.containsKey(manager[i])) {
+                    baap = new TreeNode(manager[i]);
+                    map.put(baap.val, baap);
+                } else baap = map.get(manager[i]);
                 TreeNode beta = new TreeNode(i);
                 baap.children.add(beta);
-                map.put(i,beta);
+                map.put(beta.val, beta);
             }
+
         }
+        map.values().stream().forEach(r->display(r));
         return root;
     }
-    public static int findTime(TreeNode root, int[] time){
+
+    public static int findTime(TreeNode root, int[] time) {
         int tTime = 0;
         int max = 0;
-        for(TreeNode child: root.children){
-            int t = findTime(child,time);
-            if(t>max) max = t;
+        for (TreeNode child : root.children) {
+            int t = findTime(child, time);
+            if (t > max) max = t;
         }
-        return max+time[root.val];
+        return max + time[root.val];
     }
+
     public static int numOfMinutes(int n, int headID, int[] manager, int[] informTime) {
-        if(n==1) return informTime[0];
-        TreeNode root = managerTreeBuilder(headID,manager);
+        if (n == 1) return informTime[0];
+        TreeNode root = managerTreeBuilder(headID, manager);
         display(root);
-        return findTime(root,informTime);
+        return findTime(root, informTime);
 
     }
+
     public static void main(String[] args) {
         int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
         TreeNode root = construct(arr);
@@ -330,7 +330,8 @@ public class Main {
         System.out.println(findMaxSumSubTree(root));
         System.out.println(maxSumSubTreeTreeNode);
         System.out.println("---");
-        System.out.println(numOfMinutes(7,6,new int[]{1,2,3,4,5,6,-1},new  int[]{0,6,5,4,3,2,1}));
+        display(managerTreeBuilder(6, new int[]{1, 2, 3, 4, 5, 6, -1}));
+//        System.out.println(numOfMinutes(7,6,new int[]{1,2,3,4,5,6,-1},new  int[]{0,6,5,4,3,2,1}));
 
     }
 }

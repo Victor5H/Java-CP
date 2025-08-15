@@ -9,7 +9,18 @@ public class Tree {
         TreeNode bst = buildBST(nums);
         nthLargest(bst,8);
         System.out.println(maxHeight(bst));
+        System.out.println(isPowerOfFour(16));
+
     }
+    public static boolean isPowerOfFour(int n) {
+        if(n<=1) return false;
+        while(n%4==0 || n==1){
+            if(n==1) return true;
+            n=n/4;
+        }
+        return false;
+    }
+
     public static TreeNode buildBST(int[] values) {
         TreeNode root = null;
         for (int val : values) {
