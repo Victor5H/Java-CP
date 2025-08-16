@@ -419,7 +419,7 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
 //    https://leetcode.com/problems/diameter-of-binary-tree/
     public static int diameter=0;
     public static int diameter(TreeNode root){
-        if(root== null) return 0;
+        if(root== null) return -1; //because its adding 2 to find the diameter
         int leftHeight =diameter(root.left);
         int rightHeight = diameter(root.right);
         int currentDiameter = rightHeight+leftHeight+2;
