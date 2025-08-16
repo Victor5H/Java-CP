@@ -416,6 +416,16 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         root.right = builder(nums,mid+1,h);
         return root;
     }
+//    https://leetcode.com/problems/diameter-of-binary-tree/
+    public static int diameter=0;
+    public static int diameter(TreeNode root){
+        if(root== null) return 0;
+        int leftHeight =diameter(root.left);
+        int rightHeight = diameter(root.right);
+        int currentDiameter = rightHeight+leftHeight+2;
+        if(currentDiameter>diameter) diameter=currentDiameter;
+        return Math.max(leftHeight,rightHeight)+1;
+    }
     public static void main(String[] args) {
         Integer [] arr ={50,25,12,null,null,27,30,null,null,null,75,62,null,70,null,null,87,null,null};
         TreeNode root = construct(arr);
@@ -458,7 +468,11 @@ static ArrayList<List<Integer>> binaryLO = new ArrayList<>();
         System.out.println(binaryTreePaths);
         int [] nums = {-10,-3,0,5,9};
         System.out.println(builder(nums,0, nums.length));
-System.out.println(builder(nums,0, nums.length));
+        System.out.println(builder(nums,0, nums.length));
+//        System.out.println(display(root));
+        System.out.println("----");
+        display(root);
+        System.out.println(diameter(root));
 
     }
 
