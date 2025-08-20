@@ -1,7 +1,7 @@
 package daily.twentyAug;
 
 import java.util.HashMap;
-
+//https://leetcode.com/problems/contains-duplicate-ii/
 public class ContainsNearbyDuplicate {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
