@@ -17,14 +17,37 @@ public class SpiralDisplay {
     }
 //    https://www.youtube.com/watch?v=SVFXEqn3Ceo
     public static void main(String[] args) {
-        int [][]mat = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
+        int [][]mat = {{11,12,13,14,15,16,17},{21,22,23,24,25,26,27},{31,32,33,34,35,36,37},{41,42,43,44,45,46,47},{51,52,53,54,55,56,57}};
         int r = mat.length;
         int c = mat[0].length;
-        for (int i = 0; i < c/2; i++) {
-            for (int j = 0; j < r / 2; j++) {
-                System.out.print(mat[j][i]+" ");
+//        while ()
+        int minRow=0,maxRow=r-1;
+        int minCol = 0,maxCol=c-1;
+        int tn=r*c,n=0;
+        while (n<tn) {
+//        left wall
+            for (int i = minRow,j=minCol; i <=maxRow && n<tn; i++) {
+                System.out.print(mat[i][j]+" ");
+                n++;
             }
-            System.out.println();
+            minCol++;
+//            bottom wall
+            for (int i = minRow,j=minCol; j <=maxCol&& n<tn; j++) {
+                System.out.print(mat[i][j]+" ");
+                n++;
+            }
+//            && n<tn for checking every time in for loop if all element has been printed
+            maxRow--;
+            for (int i =maxRow,j=maxCol; i >=minRow && n<tn; i--) {
+                System.out.print(mat[i][j]+" ");
+                n++;
+            }
+            maxCol--;
+            for (int i = minRow,j=maxCol; j >=minCol && n<tn; j--) {
+                System.out.print(mat[i][j]+" ");
+                n++;
+            }
+            minRow++;
         }
     }
 
