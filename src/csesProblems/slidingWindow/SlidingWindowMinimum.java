@@ -1,9 +1,6 @@
-//package csesProblems.slidingWindow;
+package csesProblems.slidingWindow;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+import java.util.*;
 
 public class SlidingWindowMinimum {
     public static long [] generate(long n,long x, long a, long b, long c){
@@ -14,39 +11,28 @@ public class SlidingWindowMinimum {
         }
         return arr;
     }
-    public static long calculateSum(long [] arr, long k){
-        int n = arr.length;
-        int window = (int) k; // Cast to int for array indexing
-        long min = Long.MAX_VALUE;
+    public static long calculateMin(long [] arr, long k){
         long minXor = 0;
-        HashSet<Long> set = new HashSet<>();
-        PriorityQueue<Long> q = new PriorityQueue<>();
-
-        // Compute the sum of the first window
-        for (int i = 0; i < window; i++) {
-            set.add(arr[i]);
-            if(arr[i]<min) min = arr[i];
-        }
-        q.addAll(set);
-        minXor = q.poll();
-
-        // Slide the window across the array
-        for (int i = window; i < n; i++) {
-            set.remove(arr[i-window]);
-            set.add(arr[i]);
-            if(arr[i - window]==min){
-                while (q.size()!=0) {
-                    q.poll();
-                }
-                q.addAll(set);
-                min = q.poll();
-            } //calculate
-            else{
-                if(arr[i]<min) min=arr[i];
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        for (int i = 0; i < k; i++) {
+            while (!deque.isEmpty()&&arr[deque.peekLast()]>arr[i]){
+                deque.pollLast();
             }
-             minXor ^= min;
-        }
+            deque.offerLast(i);
 
+        }
+        for (int i = Math.toIntExact(k); i < arr.length; i++) {
+            minXor^=arr[deque.peekFirst()];
+            while (!deque.isEmpty()&&deque.peekFirst()<i-k+1){ // getting out indices out of the current window
+                deque.pollFirst();
+            }
+            while (!deque.isEmpty()&&arr[deque.peekLast()]>arr[i]){
+                deque.pollLast();
+            }
+            deque.offerLast(i);
+
+        }
+        minXor^=arr[deque.peekFirst()];
         return minXor;
     }
     public static void main(String[] args) {
@@ -60,6 +46,6 @@ public class SlidingWindowMinimum {
         b = s.nextLong();
         c = s.nextLong();
         long [] arr = generate(n,x,a,b,c);
-        System.out.print(calculateSum(arr,k));
+        System.out.print(calculateMin(arr,k));
     }
 }
