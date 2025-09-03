@@ -29,7 +29,7 @@ public class GetStairsPath {
     }
 
     public static void main(String[] args) {
-        System.out.println(getStairPaths(3));
-        System.out.println(getStairPaths(2).size());
+        System.out.println(getStairPaths(5));
+        System.out.println(getStairPaths(3).size());
     }
 }

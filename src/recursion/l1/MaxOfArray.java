@@ -4,8 +4,7 @@ public class MaxOfArray {
     public static int max(int [] nums,int index){
         if (index== nums.length) return 0;
         int got = max(nums,index+1);
-        int max = nums[index]>got ? nums[index]:got;
-        return max;
+        return Math.max(nums[index], got);
     }
 
     public static void main(String[] args) {

@@ -3,7 +3,7 @@ package recursion.l1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KeypadCombination {
+public class GetKeypadCombination {
     public static String [] codes = {".;","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
     public static List<String> getCombination(String input){
         if(input.isEmpty()){
