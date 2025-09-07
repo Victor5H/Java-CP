@@ -21,8 +21,8 @@ public class SubsetSum {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[]{3,5,7};
-        int sum = 15;
+        int arr[] = new int[]{3,4,5};
+        int sum = 9;
         long st,end;
         st = System.nanoTime();
         System.out.println(myRecursion(arr,0,sum));
@@ -44,7 +44,7 @@ public class SubsetSum {
         for (int i = 0; i < t.length; i++) {
             t[i][0] = true;
         }
-
+        st = System.nanoTime();
         for (int i = 1; i < t.length; i++) {
             for (int j = 1; j < t[0].length; j++) {
                 if(arr[i-1]<=j){
@@ -57,9 +57,8 @@ public class SubsetSum {
                 }
             }
         }
-        for (int i = 0; i < t.length; i++) {
-            System.out.println(Arrays.toString(t[i]));
-        }
         System.out.println(t[t.length-1][t[0].length-1]);
+        end = System.nanoTime();
+        System.out.println(end-st);
     }
 }
