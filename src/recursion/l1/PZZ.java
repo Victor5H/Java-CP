@@ -2,7 +2,7 @@ package recursion.l1;
 
 public class PZZ {
     /*
-    the kind of Myrecursion used in trees
+    the kind of myRecursion used in trees
      */
     public static void pzz(int num){
         if (num==0) return;

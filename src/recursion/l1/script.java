@@ -8,7 +8,7 @@ import java.util.*;
 public class script {
 
     public static void main(String[] args) {
-        String folderPath = "src/Myrecursion/"; // <- 🔁 change this to your Java files directory
+        String folderPath = "src/myRecursion/"; // <- 🔁 change this to your Java files directory
         String indexFile = "index.txt";
 
         try {

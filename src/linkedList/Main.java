@@ -88,7 +88,7 @@ public class Main {
             }
         }
         public void reverseLLRec(){
-            // reversing a linked list by swapping value with Myrecursion
+            // reversing a linked list by swapping value with myRecursion
             reverseLP = head;
             reverseHelper(head,0);
         }
