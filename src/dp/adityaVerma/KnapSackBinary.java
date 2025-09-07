@@ -63,6 +63,7 @@ public class KnapSackBinary {
                     t[i][j]=t[i-1][j];
                 }
                 else if(wt[i-1]<=j){
+//                     can be selected, choosing what is best
                     int take = val[i-1]+t[i-1][j-wt[i-1]];
                     int dont = t[i-1][j];
                     t[i][j] = Math.max(take,dont);
