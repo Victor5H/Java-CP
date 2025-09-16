@@ -11,7 +11,7 @@ public class KnapSackBinary {
         for (int i = 1; i < t.length; i++) {
             for (int j = 1; j < t[0].length; j++) {
                 if(wt[i-1]<=j){
-                    int take = t[i-1][j-wt[i-1]]+val[i-1]a;
+                    int take = t[i-1][j-wt[i-1]]+val[i-1];
                     int dont = t[i-1][j];
                     t[i][j] = Math.max(take,dont);
                 }
