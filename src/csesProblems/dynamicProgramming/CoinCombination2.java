@@ -1,9 +1,8 @@
 //package csesProblems.dynamicProgramming;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class CoinCombinations1 {
+public class CoinCombination2 {
     public static void main(String[] args) {
         int mod = 1000000007;
         Scanner s = new Scanner(System.in);
@@ -15,8 +14,8 @@ public class CoinCombinations1 {
         }
         long []t = new long[sum+1];
         t[0]=1;
-        for (int i = 1; i < t.length; i++) {
-            for(int coin:coins){
+        for(int coin: coins){
+            for (int i = 1; i < t.length; i++) {
                 if(coin<=i){
                     long l = t[i] + t[i - coin];
                     if(t[i]>=mod){
@@ -28,6 +27,6 @@ public class CoinCombinations1 {
                 }
             }
         }
-        System.out.println((t[sum]));
+        System.out.println(t[sum]);
     }
 }
