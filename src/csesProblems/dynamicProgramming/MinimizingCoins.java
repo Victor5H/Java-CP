@@ -27,11 +27,21 @@ public class MinimizingCoins {
             coins[i]= s.nextInt();
         }
         dp = new int[sum+1];
-        Arrays.fill(dp,Integer.MIN_VALUE);
+        Arrays.fill(dp,Integer.MAX_VALUE);
         int []t = new int[sum+1];
-
-        int res = recursion(coins,sum);
-        System.out.println(res==Integer.MAX_VALUE?-1:res);
+        Arrays.fill(t,Integer.MAX_VALUE);
+        t[0]=0;
+        for (int i = 0; i < coins.length; i++) {
+            for (int j =1; j < t.length; j++) {
+                if(coins[i]<=j) {
+                    int take = t[j - coins[i]]!=Integer.MAX_VALUE?t[j - coins[i]] + 1:Integer.MAX_VALUE ;
+                    int dont = t[j];
+                    t[j] = Math.min(take, dont);
+                }
+            }
+        }
+        int res = t[sum];
+        System.out.println(res>=Integer.MAX_VALUE?-1:res);
     }
 
 }
