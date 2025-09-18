@@ -1,4 +1,4 @@
-//package csesProblems.dynamicProgramming;
+package csesProblems.dynamicProgramming;
 
 import java.util.Scanner;
 
