@@ -1,5 +1,8 @@
 package daily.twentyTwoSep;
 
+import java.util.function.Function;
+import java.util.function.Supplier;
+
 public class RunLengthEncoding {
     public static String encode(String input) {
         StringBuilder out = new StringBuilder();
