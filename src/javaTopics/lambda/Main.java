@@ -34,7 +34,7 @@ public class Main {
 //        or
         List<Hotel> twoStarHotels = service.filterHotels((hotel)->{ return hotel.getType()==HotelType.TWO_STAR;});
 //        can remove (_) param bracket if only on param in function
-//        also remove the return statement
+//        also remove the return statement and {_} if you only have one line of code
         List<Hotel> threeStarHotels = service.filterHotels(hotel -> hotel.getType()==HotelType.THREE_STAR);
 
 ////        comparator
@@ -48,17 +48,21 @@ public class Main {
 
         //// thread
 //        implementing a runnable as lambda
-        Thread t = new Thread(()-> {
-            for (int i = 0; i < 10; i++) {
+//         storing lambda in a reference
+        Runnable counting= ()-> {
+            for (int i = 1; i <=10; i++) {
                 try{
                     Thread.sleep(500);
                     System.out.println(i);
 
                 }catch (Exception e){
-                    System.out.println(e.getCause());
+                    System.out.println(e.getMessage());
                 }
             }
-        });
+        };
+        Thread t = new Thread(counting);
+        Thread t2 = new Thread(counting);
         t.start();
+        t2.start();
     }
 }
