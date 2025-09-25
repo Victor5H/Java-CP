@@ -23,29 +23,29 @@ public class FrogJump {
     }
 
     public static void main(String[] args) {
-        int [] arr = new int[]{30,10,60,10,60,50};
+        int [] height = new int[]{30,10,60,10,60,50};
         int n=6;
-        System.out.println(recursion(n-1,arr));
+        System.out.println(recursion(n-1, height));
         dp = new int[n];
         Arrays.fill(dp,-1);
-        System.out.println(memoization(n-1,arr));
+        System.out.println(memoization(n-1, height));
         int []t = new int[n];
         for (int i = 1; i <n; i++) {
-            int firstJump = t[i-1]+Math.abs(arr[i]-arr[i-1]);
+            int firstJump = t[i-1]+Math.abs(height[i]- height[i-1]);
             int secondJump = Integer.MAX_VALUE;
             if(i>1)
-                secondJump = t[i-2]+Math.abs(arr[i]-arr[i-2]);
+                secondJump = t[i-2]+Math.abs(height[i]- height[i-2]);
             t[i] = Math.min(firstJump,secondJump);
 
         }
         System.out.println(t[n-1]);
-////    Space optimization
+////    Space optimization since a frog can make 2 jumps. only 2 prev values are required
         int prev = 0,prev2 = 0;
-        for (int i = 1; i < arr.length; i++) {
-            int first =prev+Math.abs(arr[i]-arr[i-1]);
+        for (int i = 1; i < height.length; i++) {
+            int first =prev+Math.abs(height[i]- height[i-1]);
             int second = Integer.MAX_VALUE;
             if(i>1)
-                second =prev2+Math.abs(arr[i]-arr[i-2]);
+                second =prev2+Math.abs(height[i]- height[i-2]);
             int cur = Math.min(first,second);
             prev2 = prev;
             prev = cur;
