@@ -7,23 +7,23 @@ public class MaximumSumOfNonAdjacentElements {
     public static int recursion(int ind, int []arr){
         if (ind==0) return arr[ind];
         int dont = recursion(ind-1,arr);
-        int take = Integer.MIN_VALUE;
+        int take =arr[ind];
         if(ind>1)
-            take = arr[ind]+recursion(ind-2,arr);
+            take +=recursion(ind-2,arr);
         return Math.max(dont,take);
     }
     static int[]dp;
     public static int memoization(int ind, int []arr){
         if (ind==0) return arr[ind];
         if (dp[ind]!=-1) return dp[ind];
-        int dont = recursion(ind-1,arr);
-        int take = Integer.MIN_VALUE;
+        int dont = memoization(ind-1,arr);
+        int take = arr[ind];
         if(ind>1)
-            take = arr[ind]+memoization(ind-2,arr);
+            take +=memoization(ind-2,arr);
         return dp[ind]=Math.max(dont,take);
     }
     public static void main(String[] args) {
-        int []arr = new int[]{5,2,1,4,3,9};
+        int []arr = new int[]{10,20,30,40,40,50};
         System.out.println(recursion(arr.length-1 ,arr));
         dp = new int[arr.length];
         Arrays.fill(dp,-1);
@@ -32,9 +32,9 @@ public class MaximumSumOfNonAdjacentElements {
         t[0] = arr[0];
         for (int i = 1; i < arr.length; i++) {
             int dont = t[i-1];
-            int take = Integer.MIN_VALUE;
+            int take = arr[i];
             if(i>1)
-                take = arr[i]+t[i-2];
+                take += t[i-2];
             t[i]= Math.max(take,dont);
         }
         System.out.println(t[arr.length-1]);
@@ -43,9 +43,9 @@ public class MaximumSumOfNonAdjacentElements {
         int prev=arr[0],prev2=0;
         for (int i = 1; i < arr.length; i++) {
             int dont = prev;
-            int take = Integer.MIN_VALUE;
+            int take =arr[i];
             if(i>1)
-                take = arr[i]+prev2;
+                take += prev2;
             int curr= Math.max(dont,take);
             prev2 = prev;
             prev = curr;
