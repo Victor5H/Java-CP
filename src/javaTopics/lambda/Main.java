@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
+//https://www.youtube.com/watch?v=0ada8fAMpVs
 public class Main {
     public static void main(String[] args) {
         HotelService service = new HotelService();
@@ -47,8 +47,8 @@ public class Main {
         System.out.println(list);
 
         //// thread
-//        implementing a runnable as lambda
-//         storing lambda in a reference
+//        implementing a runnable as javaTopics.lambda.lambda
+//         storing javaTopics.lambda.lambda in a reference
         Runnable counting= ()-> {
             for (int i = 1; i <=10; i++) {
                 try{

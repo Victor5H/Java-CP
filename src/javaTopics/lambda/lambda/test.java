@@ -1,4 +1,4 @@
-package lambda;
+package javaTopics.lambda.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,7 +60,7 @@ public class test {
         Collections.sort(list,( a, b)-> b-a);
         int num = 700;
         FilterInterface filterGreater = a->{
-//            num = 500; this stmt is invalid, the value to local varibale cannot be chanegd inside a lambda
+//            num = 500; this stmt is invalid, the value to local varibale cannot be chanegd inside a javaTopics.lambda.lambda
 //            and the local variable would prefferabley declared final, cause of value capture
             if(a>num) return true;
             else return false;

@@ -1,4 +1,4 @@
-package lambda;
+package javaTopics.lambda.lambda;
 
 @FunctionalInterface
 public interface FilterInterface {
