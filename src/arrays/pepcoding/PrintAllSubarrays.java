@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class PrintAllSubarrays {
     public static void printSubarrays(int[] arr){

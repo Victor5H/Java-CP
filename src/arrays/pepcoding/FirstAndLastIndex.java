@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class FirstAndLastIndex{
     public static void find(int []arr,int find){

@@ -1,6 +1,4 @@
-package arrays;
-
-import java.util.Arrays;
+package arrays.pepcoding;
 
 public class TwoStacksInAnArray {
     int[] arr;

@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class SpanOfArray {
     public static int span(int [] nums){

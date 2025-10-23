@@ -1,7 +1,4 @@
-package arrays;
-
-import java.util.Arrays;
-import java.util.List;
+package arrays.pepcoding;
 
 public class BarChart {
     public static void barChart(int [] nums){

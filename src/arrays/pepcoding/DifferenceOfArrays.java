@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class DifferenceOfArrays {
     public static void difference(int [] nums1, int [] nums2){

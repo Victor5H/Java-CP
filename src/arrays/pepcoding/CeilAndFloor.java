@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class CeilAndFloor {
     public static void myWay(int [] arr, int val){

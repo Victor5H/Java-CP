@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 public class SumOfArrays {
     public static void sum(int [] nums1,int [] nums2){

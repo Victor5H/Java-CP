@@ -1,4 +1,4 @@
-package arrays;
+package arrays.pepcoding;
 
 import java.util.Arrays;
 
