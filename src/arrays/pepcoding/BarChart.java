@@ -18,6 +18,6 @@ public class BarChart {
     }
 
     public static void main(String[] args) {
-        barChart(new int[]{1,2,3,4,5,6,7,8,9});
+        barChart(new int[]{1,2,8,4,5,6,7,8,9});
     }
 }
