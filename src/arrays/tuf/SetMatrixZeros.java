@@ -43,6 +43,25 @@ public class SetMatrixZeros {
             }
         }
     }
+    public static void best(int [][]mat){
+        int corner = 1;
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if(mat[i][j]==0){
+                    mat[i][0] = 0;
+                    if(j==0)
+                        mat[0][j] = 0;
+                    else
+                        corner=0;
+                }
+            }
+        }
+        for (int i = mat.length-1; i >=1 ; i--) {
+            for (int j = mat[0].length; j >= 1; j--) {
+
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
