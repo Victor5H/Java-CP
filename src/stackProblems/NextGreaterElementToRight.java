@@ -18,8 +18,6 @@ public class NextGreaterElementToRight {
                 else ret[i] = stack.peek();
             }
             stack.push(curr);
-
-
         }
         return ret;
     }
