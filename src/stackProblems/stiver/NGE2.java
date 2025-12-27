@@ -1,4 +1,4 @@
-package stackProblems;
+package stackProblems.stiver;
 
 import java.util.Stack;
 

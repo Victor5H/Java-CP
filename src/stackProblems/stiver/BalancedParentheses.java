@@ -1,4 +1,4 @@
-package stackProblems;
+package stackProblems.stiver;
 
 import java.util.Stack;
 
@@ -11,14 +11,11 @@ public class BalancedParentheses {
                 stack.push(curr);
             }
             else{
-                char peek=78;
-                if(!stack.isEmpty())
-                    peek = stack.peek();
-                else return false;
-                if(curr==')' && peek=='(') stack.pop();
-                else if (curr=='}' && peek=='{') stack.pop();
-                else if  (curr==']' && peek=='[') stack.pop();
-                else return false;
+                if(stack.isEmpty()) return false;
+                char pop = stack.pop();
+                if(curr=='}' && pop!='{') return false;
+                if(curr==')' && pop!='(') return false;
+                if(curr==']' && pop!='(') return false;
             }
         }
         return stack.isEmpty();
