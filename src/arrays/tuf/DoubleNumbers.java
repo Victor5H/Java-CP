@@ -1,7 +1,5 @@
 package arrays.tuf;
 
-import daily.seventeenAug.IsPowerOfTwo;
-
 import java.util.HashMap;
 
 public class DoubleNumbers {
