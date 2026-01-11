@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class PSE {
-    public static void pse(int [] nums){
+    public static int [] pse(int [] nums){
         Stack<Integer> stack = new Stack<>();
         int n = nums.length;
         int [] ans = new int[n];
@@ -16,7 +16,7 @@ public class PSE {
             else ans[i] = stack.peek();
             stack.push(i);
         }
-        System.out.println(Arrays.toString(ans));
+        return ans;
     }
 
     public static void main(String[] args) {
