@@ -1,7 +1,7 @@
 package daily.TwentySix.fifteenthJan;
 
 import java.util.Arrays;
-
+//https://leetcode.com/problems/count-square-submatrices-with-all-ones/
 public class CountSquareSubmatricesWithAllOnes {
     int [][]mat=null;
     int n=0,m=0;

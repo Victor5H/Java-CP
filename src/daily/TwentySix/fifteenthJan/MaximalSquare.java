@@ -37,7 +37,27 @@ public class MaximalSquare {
             }
         }
 //        System.out.println(Arrays.deepToString(lenM));
-        return maxArea;
+        int dpML=0;
+        int [][] dp = new int [n+1][m+1];
+        for(int i=n-1;i>=0;i--){
+            for(int j=m-1;j>=0;j--){
+                if(matrix[i][j]=='0') dp[i][j]=0;
+                else{
+                    int [][] dx  = {{1,0},{1,1},{0,1}};
+                    int len = Integer.MAX_VALUE;
+                    for(int []d:dx){
+                        int dr = i+d[0];
+                        int dc = j+d[1];
+                        len = Math.min(len,dp[dr][dc]);
+                    }
+                    len = len==Integer.MAX_VALUE?1:len+1;
+                    dpML = Math.max(dpML,len*len);
+                    dp[i][j]=len;
+                }
+            }
+        }
+        return dpML;
+//        return maxArea;
     }
 
     public static void main(String[] args) {
