@@ -1,6 +1,6 @@
 package daily.TwentyFive.seventeenAug;
 //https://leetcode.com/problems/add-two-numbers
-class ListNode {
+public class ListNode {
      int val;
       ListNode next;
       ListNode() {}
