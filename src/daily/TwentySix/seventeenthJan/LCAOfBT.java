@@ -1,7 +1,7 @@
 package daily.TwentySix.seventeenthJan;
 
 import dsComponents.TreeNode;
-
+//https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 public class LCAOfBT {
     TreeNode p,q,ans;
     public boolean dfs(TreeNode root){
