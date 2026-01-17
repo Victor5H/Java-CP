@@ -7,7 +7,7 @@ public class LCAOfBST {
     TreeNode p;
     public TreeNode dfs(TreeNode root){
         if(root==null) return null;
-        if(root.left!=null & root.right !=null){
+        if(root.left!=null && root.right !=null){
             if(p.val>root.val && q.val>root.val)
                 return dfs(root.right);
             if(p.val<root.val && q.val<root.val)
