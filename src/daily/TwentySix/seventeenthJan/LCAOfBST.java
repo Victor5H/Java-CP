@@ -1,8 +1,8 @@
-package daily.TwentySix.seventeenth;
+package daily.TwentySix.seventeenthJan;
 
 import dsComponents.TreeNode;
 
-public class LCA {
+public class LCAOfBST {
     TreeNode q;
     TreeNode p;
     public TreeNode dfs(TreeNode root){
