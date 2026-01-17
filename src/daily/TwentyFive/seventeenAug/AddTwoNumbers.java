@@ -1,12 +1,5 @@
 package daily.TwentyFive.seventeenAug;
-//https://leetcode.com/problems/add-two-numbers
-public class ListNode {
-     int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
+
 public class AddTwoNumbers {
     ListNode ans = null;
     ListNode trav = ans;
