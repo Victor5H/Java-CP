@@ -1,4 +1,4 @@
-package daily.TwentySix.twentyTwo;
+package daily.TwentySix.twentySecond;
 
 import java.util.HashMap;
 //https://leetcode.com/problems/lru-cache/
