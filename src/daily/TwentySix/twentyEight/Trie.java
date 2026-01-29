@@ -2,16 +2,16 @@ package daily.TwentySix.twentyEight;
 
 import java.util.HashMap;
 //https://leetcode.com/problems/implement-trie-prefix-tree/
-class TrieNode{
-    HashMap<Character,TrieNode> children;
-    boolean eow;
-    public TrieNode(){
-        children = new HashMap<>();
-        eow=false;
-    }
-}
-public class Trie {
 
+public class Trie {
+    class TrieNode{
+        HashMap<Character,TrieNode> children;
+        boolean eow;
+        public TrieNode(){
+            children = new HashMap<>();
+            eow=false;
+        }
+    }
 
     TrieNode root;
     public Trie() {
