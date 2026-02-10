@@ -46,12 +46,11 @@ public class ReentrantReadWriteLockDemo {
     public static void main(String[] args) {
         ReentrantReadWriteLockDemo rwDemo = new ReentrantReadWriteLockDemo();
         Runnable r = rwDemo::readCounter;
-        Runnable w = ()->{
-          rwDemo.writeCounter(60);
-        };
+        Runnable w = ()-> rwDemo.writeCounter(60);
+
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         for (int i = 0; i < 5; i++) {
-            if(i==1) executorService.submit(w);
+            if(i==2) executorService.submit(w);
             else executorService.submit(r);
         }
         try {
